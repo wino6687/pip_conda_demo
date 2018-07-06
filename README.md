@@ -11,7 +11,7 @@ Does your code depend on packages that can’t be installed with pip? (cough, gd
 
 If your code depends on a library that can only be installed with one of the conda channels or a user’s conda channel, then you should definitely shoot for having your package installable with anaconda and not pip.
 
-	Many people choose to upload their code to pypi (pip) and then use that as the source for their anaconda package. Alternatively, you can use your github repo as the source, but I haven’t added that to this guide yet.
+- Many people choose to upload their code to pypi (pip) and then use that as the source for their anaconda package. Alternatively, you can use your github repo as the source, but I haven’t added that to this guide yet.
 
 
 Steps to upload code to pypi:
