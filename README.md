@@ -16,7 +16,9 @@ If your code depends on a library that can only be installed with one of the con
 
 Steps to upload code to pypi:
 
-File Hierarchy:
-    /mypackage
-      /mypackage
-        __init__.py
+File Hierarchy
+```
+/mypackage
+  /mypackage
+    __init__.py
+```
