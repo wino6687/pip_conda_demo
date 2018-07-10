@@ -9,27 +9,40 @@ Creating a python library installable with pip or anaconda is easy!
 
 ## Starting Questions to ask yourself:
 
+### What are pip and conda?
+In many ways, pip is the default package installer in python, while conda is an environment manager that aims to take pip's place and do more. Put simply, pip is for managing python packages, and conda is for environment manangement. While these may sound very similar, there is a key distinction! If you already have an instance of python installed and you just want to install a package or two, pip is the way to go. But pip really is lacking when it comes to managing and tracking external dependencies.
+
+An external dependency is code that a python package depends on that is not itself a python package. This can be a problem for pip, because everything built in pip has a setup.py setup file associated with it. But if you use HDF5 as a dependency, its source code does not have a setup.py file.
+
+
+
 ### Should I use pip or anaconda?
-In many ways, pip and anaconda are not exactly competing directly against eachother. Each has a set of strengths and weaknesses. Put simply, pip is for managing python packages, and conda is for environment manangement. While these may sound very similar, there is a key distinction! If you already have an instance of python installed and you just want to install a package or two, pip is the way to go. But pip really is lacking when it comes to managing and tracking external dependencies.
-
-An external dependency is code that a python package depends on that is not itself a python package. Numpy, for example, relies on packages built in C, rather than python. While it is possible to build a package like this in pip, conda will do more for you along the way to assist in the process.
-
 
 #### First Question to ask yourself:
- - Does your code depend on packages that can’t be installed with pip? (gdal for example)
+ - Does your code depend on packages that can’t be installed with pip or are not in python at all? (gdal or HDF5 for example)
+    - If your code depends on a library that can only be installed with one of the conda channels or a user’s conda channel, then you should definitely shoot for having your package installable with conda and not pip.
 
-  - If your code depends on a library that can only be installed with one of the conda channels or a user’s conda channel, then you should definitely shoot for having your package installable with anaconda and not pip.
+# Creating a pip installable package:
 
+## Uploading your code to PyPi: Python Package Index
 
-## PYPI: Python Package Index
-Many people choose to upload their code to pypi (pip) and then use that as the source for their anaconda package. Alternatively, you can use your github repo as the source, but I haven’t added that to this guide yet.
+[Here is the PyPi Documentation](https://packaging.python.org/tutorials/packaging-projects/)
 
-
-Steps to upload code to pypi:
+Steps to Upload Code to PyPi:
 
 File Hierarchy
 ```
 /mypackage
   /mypackage
     __init__.py
+    mypackage.py
+    /mysubpackage
+      __init__.py
+      .mysubpackage.py
 ```
+It is important to have file hierarchy that matches the above format. You have your main directory, which is usually the git repository. Inside the main directory you put another directory with the same name as your package (normally same name as main directory). Inside this folder, you put the main python file of your library along with an ```__init__.py``` file. The ```__init__.py``` file is what tells python to treat your code like a package.
+
+You can refer to this git repository to see the proper file structure. The example package is simply called 'conda-demo'. 
+
+
+# Creating a conda installable package:
