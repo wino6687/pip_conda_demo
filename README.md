@@ -26,7 +26,7 @@ An external dependency is code that a python package depends on that is not itse
 
 ## Uploading your code to PyPi: Python Package Index
 
-[Here is the PyPi Documentation](https://packaging.python.org/tutorials/packaging-projects/)
+[Here is the PyPi Guide to Making pip Installable Code](https://packaging.python.org/tutorials/packaging-projects/)
 
 Steps to Upload Code to PyPi:
 
@@ -40,9 +40,31 @@ File Hierarchy
       __init__.py
       .mysubpackage.py
 ```
-It is important to have file hierarchy that matches the above format. You have your main directory, which is usually the git repository. Inside the main directory you put another directory with the same name as your package (normally same name as main directory). Inside this folder, you put the main python file of your library along with an ```__init__.py``` file. The ```__init__.py``` file is what tells python to treat your code like a package.
+It is important to have file hierarchy that matches the above format. You have your main directory, which is usually the git repository. Inside the main directory you put another directory with the same name as your package (normally same name as main directory). Inside this folder, you put the main python file of your library along with an ```__init__.py``` file. The ```__init__.py``` file is what tells python to treat your code like a package. If you want to package more code as a sort of sub-package to be imported by your main package, you can simply continue the same structure deeper as seen in the example above.
 
-You can refer to this git repository to see the proper file structure. The example package is simply called 'conda-demo'. 
+You can refer to this git repository to see the proper file structure. The example package is simply called 'conda-demo'.
+
+
 
 
 # Creating a conda installable package:
+
+Making conda packages is a bit more complex than making pip installable libraries. Conda is more powerful, but also a much larger and complex system.
+
+### Initial Considerations:
+
+##### What channel do I want to use to install my library?
+- Default (Conda)
+- [conda-forge](https://conda-forge.org)
+- Personal channel
+
+By default, [following the conda documentation](https://conda.io/docs/user-guide/tutorials/build-pkgs.html), you will create a package that is installable through your personal channel. This is okay and is still publicly available, however there is one major limitation:
+
+#### Dependencies will all need to be installable with the channels specified in the user's .condarc file
+
+- If a user attemps to install your package, and it has dependencies from other user's private channels, conda-forge, or pip, they will first have to add all those channels to their ```.condarc``` file
+- You have to be careful mixing dependency channels in your environment. Certain packages do not function properly if their dependencies are not all installed on the same channel.
+  - If you have this issue, skip to the conda-forge section.
+
+
+### conda-forge
