@@ -68,3 +68,7 @@ By default, [following the conda documentation](https://conda.io/docs/user-guide
 
 
 ### conda-forge
+
+[The conda-forge guide](https://github.com/conda-forge/staged-recipes) for creating packages is quite different from the default conda route.
+
+conda-forge works a bit differently than normal conda. If you recall from above, mixing the channels that dependencies are downloaded with can create issues and prevent dependencies from being found. Conda-forge fixes this issue by requireing all of your package's dependencies to already be on the conda-forge or default channels.
