@@ -26,10 +26,10 @@ An external dependency is code that a python package depends on that is not itse
 
 # Initial Steps for Pip and Conda:
 
-Making your code pip installable is much easier than you think! There are several key steps:
+Making your code pip or conda installable is much easier than you think! There are several key steps:
 1. Organize your code into the proper file heirarchy
 2. Add your ```__init__.py``` files
-3. Add a LICENSE, and a README.md if you don't already have one
+3. Add a ```LICENSE```, and a ```README.md``` if you don't already have one
 
 
 ### License Help: [This page on the python-guide is very helpful](http://docs.python-guide.org/en/latest/writing/license/)
@@ -44,11 +44,11 @@ Making your code pip installable is much easier than you think! There are severa
       __init__.py
       .mysubpackage.py
 ```
-2. __init__.py files
+2. ```__init__.py``` files
   - These files help python identify your python files as importable packages. They have very simple contents:
-```
-name = 'mypackage'
-```
+  ```
+  name = 'mypackage'
+  ```
 
 
 # Creating a pip installable package:
