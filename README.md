@@ -21,8 +21,17 @@ An external dependency is code that a python package depends on that is not itse
 #### First Question to ask yourself:
  - Does your code depend on packages that can’t be installed with pip or are not in python at all? (gdal or HDF5 for example)
     - If your code depends on a library that can only be installed with one of the conda channels or a user’s conda channel, then you should definitely shoot for having your package installable with conda and not pip.
+    - You can double check this by creating a new environment with conda and attempting to install you dependencies with pip first and then conda. Or you can create a yaml file with all of your dependencies and test the channels by editing your ```.condarc``` file.
 
 # Creating a pip installable package:
+
+Making your code pip installable is much easier than you think! There are several key steps:
+1. Organize your code into the proper file heirarchy
+2. Add your ```__init__.py``` files
+3. Add a LICENSE, setup.py, and a README.md if you don't already have one
+4.
+
+### License Help: [This page on the python-guide is very helpful](http://docs.python-guide.org/en/latest/writing/license/)
 
 ## Uploading your code to PyPi: Python Package Index
 
@@ -62,9 +71,20 @@ By default, [following the conda documentation](https://conda.io/docs/user-guide
 
 ### Dependencies will all need to be installable with the channels specified in the user's .condarc file
 
-- If a user attemps to install your package, and it has dependencies from other user's private channels, conda-forge, or pip, they will first have to add all those channels to their ```.condarc``` file
+- If a user attempts to install your package, and it has dependencies from other user's private channels, conda-forge, or pip, they will first have to add all those channels to their ```.condarc``` file
 - You have to be careful mixing dependency channels in your environment. Certain packages do not function properly if their dependencies are not all installed on the same channel.
   - If you have this issue, skip to the conda-forge section.
+
+
+If you are building a package with the purpose of being used within other packages, meaning it will be a dependency for other people's work, then it makes more sense to publish with conda-forge. However, if your package is more of a 'top level' program that may have many dependencies but is not intended to be a dependency for other programs, then publishing in conda will do just fine! You can always decide to release on conda-forge in the future as well.
+
+
+
+
+
+
+
+
 
 
 ### conda-forge
