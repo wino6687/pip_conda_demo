@@ -31,8 +31,7 @@ Making your code pip or conda installable is much easier than you think! There a
 2. Add your ```__init__.py``` files
 3. Add a ```LICENSE```, and a ```README.md``` if you don't already have one
 
-
-### License Help: [This page on the python-guide is very helpful](http://docs.python-guide.org/en/latest/writing/license/)
+___
 
 1. File Hierarchy:
 ```
@@ -49,6 +48,12 @@ Making your code pip or conda installable is much easier than you think! There a
   ```
   name = 'mypackage'
   ```
+
+3. Adding a ```LICENSE``` file  
+The United States has pretty strict licensing laws, and any source code you plan to distribute must have a license associated with it.
+
+ [This page on the python-guide is very helpful](http://docs.python-guide.org/en/latest/writing/license/)
+
 
 
 # Creating a pip installable package:
