@@ -7,7 +7,7 @@ So you’ve written some great code in python. That's awesome! Chances are there
 Creating a python library installable with pip or anaconda is easy!
 
 
-## Starting Info and Questionsf:
+## Starting Info and Questions:
 
 ### What are pip and conda?
 In many ways, pip is the default package installer in python, while conda is an environment manager that aims to take pip's place and do more. If you already have an instance of python installed and you just want to install a common package or two, pip is the way to go. But pip really is lacking when it comes to managing and tracking external dependencies and accessing all of the available python packages out there.
@@ -62,9 +62,9 @@ Now that you have completed the steps above, you are ready to build a package fo
 
 You should already have completed the initial steps above before starting this section. If you've made it this far, the rest is easy!
 
-### Make an account at pypi.org
+### 1. Make an account at pypi.org
 
-### Make your setup.py file
+### 2. Make your setup.py file
 
 ```
 import setuptools
@@ -93,7 +93,7 @@ setuptools.setup(
 
 Your setup.py file is your buildscript for setuptools. It is essentially what holds the most basic information about your package and where pip can find the rest of it (in your git repo). Every time you update your package, you will change the version number in your ```setup.py``` file before uploading it to pypi.
 
-### Create your Distribution Archive Files:
+### 3. Create your Distribution Archive Files:
 
 Before you begin, try a ```python3 -m pip install --user --upgrade setuptools wheel``` to make sure they are up to date
 
@@ -103,7 +103,7 @@ Make sure you are in the same directory as your ```setup.py``` file (main direct
 
 This should create a ```dist``` folder in your main directory with the compressed files for your package!
 
-### Upload your distribution archives to pypi:
+### 4. Upload your distribution archives to pypi:
 Check that you have twine installed:
 ```python3 -m pip install --user --upgrade twine```
 Twine simply manages the file upload to PyPi. Next run this command:
@@ -113,7 +113,7 @@ When you don't pass a location for twine to upload you distribution archives, it
 
 You will be prompted for your PyPi login credentials, and then the upload will begin. Now you should be able to login to your account at pypi.org where you will be able to see your package.
 
-### Test you New Package
+### 5. Test you New Package
 Wait 5-10 minutes for your uploaded package to be registered by pip. Sometimes you can install it right away, and other times it takes a few minutes.
 
 ```pip install conda-demo```
