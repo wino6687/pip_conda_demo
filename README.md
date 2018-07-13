@@ -96,7 +96,7 @@ Before you begin, try a ```pip install setuptools wheel``` to make sure they are
 Make sure you are in the same directory as your ```setup.py``` file (main directory of project)
 
   ```python3 setup.py sdist bdist_wheel```
-```
+
 ### Uploading your code to PyPi: Python Package Index
 
 [Here is the PyPi Guide to Making pip Installable Code](https://packaging.python.org/tutorials/packaging-projects/)
