@@ -31,7 +31,7 @@ An external dependency is code that a python package depends on that is not itse
 
 ***
 
-### 1. File Hierarchy:
+#### 1. File Hierarchy:
 ```
 /mypackage
   /mypackage
@@ -44,17 +44,19 @@ An external dependency is code that a python package depends on that is not itse
 
 You can refer to this git repository to see the proper file structure. The example package is simply called 'conda-demo'.
 
-### 2. ```__init__.py``` files
+#### 2. ```__init__.py``` files
   - These files help python identify your python files as importable packages. They have very simple contents:
   ```
   name = 'mypackage'
   ```
 
-### 3. Adding a ```LICENSE``` file  
+#### 3. Adding a ```LICENSE``` file
 The United States has pretty strict licensing laws, and any source code you plan to distribute must have a license associated with it.
   -  [This page on the python-guide is a helpful intro to licenses](http://docs.python-guide.org/en/latest/writing/license/)
 
 Most python libraries use MIT or BSD licenses, which are open source licenses. These types of licenses are more permissive and are easier for a wider variety of potential users to use in their workflows, especially users in industry.
+
+Now that you have completed the steps above, you are ready to build a package for your preferred channel. The first section guides you to making a pip installable library, the next section is for conda, and then the last section covers conda-forge.
 
 # Creating a pip installable package:
 
@@ -93,7 +95,7 @@ Your setup.py file is your buildscript for setuptools. It is essentially what ho
 
 ### Create your Distribution Archive Files:
 
-Before you begin, try a ```pip install setuptools wheel``` to make sure they are up to date
+Before you begin, try a ```python3 -m pip install --user --upgrade setuptools wheel``` to make sure they are up to date
 
 Make sure you are in the same directory as your ```setup.py``` file (main directory of project)
 
@@ -102,12 +104,27 @@ Make sure you are in the same directory as your ```setup.py``` file (main direct
 This should create a ```dist``` folder in your main directory with the compressed files for your package!
 
 ### Upload your distribution archives to pypi:
+Check that you have twine installed:
+```python3 -m pip install --user --upgrade twine```
+Twine simply manages the file upload to PyPi. Next run this command:
 
+```twine upload dist/*```
+When you don't pass a location for twine to upload you distribution archives, it will default to the PyPi legacy servers, which is where we want your code!
 
+You will be prompted for your PyPi login credentials, and then the upload will begin. Now you should be able to login to your account at pypi.org where you will be able to see your package.
+
+### Test you New Package
+Wait 5-10 minutes for your uploaded package to be registered by pip. Sometimes you can install it right away, and other times it takes a few minutes.
+
+```pip install conda-demo```
 
 If you have further questions, [here is the PyPi Guide to Making pip Installable Code](https://packaging.python.org/tutorials/packaging-projects/)
 
-
+### Pip Troubleshooting:
+  - If you have trouble with twine not being found, try creating a conda environment and installing twine there:
+    - ```conda create -n twine_env python=3.6 twine```
+    - ```source activate twine_env```
+    - ```twine upload dist/*```
 
 
 ***
