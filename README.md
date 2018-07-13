@@ -31,7 +31,7 @@ Making your code pip or conda installable is much easier than you think! There a
 2. Add your ```__init__.py``` files
 3. Add a ```LICENSE```, and a ```README.md``` if you don't already have one
 
-___
+***
 
 1. File Hierarchy:
 ```
@@ -41,8 +41,11 @@ ___
     mypackage.py
     /mysubpackage
       __init__.py
-      .mysubpackage.py
+      mysubpackage.py
 ```
+
+You can refer to this git repository to see the proper file structure. The example package is simply called 'conda-demo'.
+
 2. ```__init__.py``` files
   - These files help python identify your python files as importable packages. They have very simple contents:
   ```
@@ -64,22 +67,8 @@ The United States has pretty strict licensing laws, and any source code you plan
 
 Steps to Upload Code to PyPi:
 
-File Hierarchy
-```
-/mypackage
-  /mypackage
-    __init__.py
-    mypackage.py
-    /mysubpackage
-      __init__.py
-      .mysubpackage.py
-```
-It is important to have file hierarchy that matches the above format. You have your main directory, which is usually the git repository. Inside the main directory you put another directory with the same name as your package (normally same name as main directory). Inside this folder, you put the main python file of your library along with an ```__init__.py``` file. The ```__init__.py``` file is what tells python to treat your code like a package. If you want to package more code as a sort of sub-package to be imported by your main package, you can simply continue the same structure deeper as seen in the example above.
 
-You can refer to this git repository to see the proper file structure. The example package is simply called 'conda-demo'.
-
-
-
+***
 
 # Creating a conda installable package:
 
