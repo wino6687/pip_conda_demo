@@ -60,8 +60,43 @@ Most python libraries use MIT or BSD licenses, which are open source licenses. T
 
 You should already have completed the initial steps above before starting this section. If you've made it this far, the rest is easy!
 
+### Make your setup.py file
 
+```
+import setuptools
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setuptools.setup(
+    name="conda-demo",
+    version="1.0.0",
+    author="demo_author",
+    author_email="conda-demo@email.com",
+    description="A small demo package",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/wino6687/conda-demo",
+    packages=setuptools.find_packages(),
+    classifiers=(
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ),
+)
+
+```
+
+Your setup.py file is your buildscript for setuptools. It is essentially what holds the most basic information about your package and where pip can find the rest of it (in your git repo). Every time you update your package, you will change the version number in your ```setup.py``` file before uploading it to pypi.
+
+### Create your Distribution Archive Files:
+
+Before you begin, try a ```pip install setuptools wheel``` to make sure they are up to date
+
+Make sure you are in the same directory as your ```setup.py``` file (main directory of project)
+
+  ```python3 setup.py sdist bdist_wheel```
+```
 ### Uploading your code to PyPi: Python Package Index
 
 [Here is the PyPi Guide to Making pip Installable Code](https://packaging.python.org/tutorials/packaging-projects/)
