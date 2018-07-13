@@ -128,6 +128,19 @@ If you have further questions, [here is the PyPi Guide to Making pip Installable
 
 
 ***
+## Maintaining a pip package:
+
+Everytime you make a major improvement to your code, you will want to repeat this process and upload the new version to PyPi.org.
+
+### Key Steps:
+1. Change the version number in your setup.py file
+2. Remove your old distribution archive files
+3. In your package's main directory run: ```python3 setup.py sdist bdist_wheel``` to create new distribution archives
+4. Upload this new version to PyPi: ```twine upload dist/*```
+
+***
+*** 
+
 
 # Creating a conda installable package:
 
