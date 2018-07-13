@@ -60,6 +60,8 @@ Most python libraries use MIT or BSD licenses, which are open source licenses. T
 
 You should already have completed the initial steps above before starting this section. If you've made it this far, the rest is easy!
 
+### Make an account at pypi.org
+
 ### Make your setup.py file
 
 ```
@@ -97,11 +99,15 @@ Make sure you are in the same directory as your ```setup.py``` file (main direct
 
   ```python3 setup.py sdist bdist_wheel```
 
-### Uploading your code to PyPi: Python Package Index
+This should create a ```dist``` folder in your main directory with the compressed files for your package!
 
-[Here is the PyPi Guide to Making pip Installable Code](https://packaging.python.org/tutorials/packaging-projects/)
+### Upload your distribution archives to pypi:
 
-Steps to Upload Code to PyPi:
+
+
+If you have further questions, [here is the PyPi Guide to Making pip Installable Code](https://packaging.python.org/tutorials/packaging-projects/)
+
+
 
 
 ***
