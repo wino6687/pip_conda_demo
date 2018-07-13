@@ -1,2 +1,3 @@
 .DS_Store
-
+/conda_demo/pycache
+/conda_demo/hello_world/pycache
