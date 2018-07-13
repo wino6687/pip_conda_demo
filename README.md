@@ -14,13 +14,21 @@ In many ways, pip is the default package installer in python, while conda is an 
 
 An external dependency is code that a python package depends on that is not itself a python package. This can be a problem for pip, because everything built in pip has a setup.py setup file associated with it. But if you use HDF5 as a dependency, its source code does not have a setup.py file.
 
+### So, what is conda-forge?
+conda-forge is a specific conda channel with specific rules for releasing a package. Any package on the conda-forge channel has dependencies that are all installable with either conda-forge or the defaults conda channel. This normally results in more work up front to get a package properly built for conda-forge, and often will involve packaging up one or more of your dependencies first. However, this extra work up front makes your package much easier to incorperate into existing workflows and can be critical to avoiding channel dependency errors that can arise when your package mixes the channels that its dependencies are downloaded with.
+
+### In Summation:
+- Pip is the easiest and quickest to use, and is best suited for 'pure' python libraries (no external dependencies)
+- conda is more flexible than pip, but requires a bit more work to get up and running
+- conda-forge has the most strict requirments out of all of them, but can be the most useful to the widest audience and is easy to maintain once setup.
 
 
-### Should I use pip or anaconda?
+### Should I use pip, conda, or conda-forge?
 
  - Does your code depend on packages that can’t be installed with pip or are not in python at all? (gdal or HDF5 for example)
     - If your code depends on a library that can only be installed with one of the conda channels or a user’s conda channel, then you should definitely shoot for having your package installable with conda and not pip.
     - You can double check this by creating a new environment with conda and attempting to install your dependencies with pip first and then conda. Or you can create a yaml file with all of your dependencies and test the channels by editing your ```.condarc``` file.
+      - If you depend on pacakages from conda, and you intend to have your library be a dependency within other's code, then using the conda-forge channel makes the most sense.
 
  - There is nothing wrong with building both, and either maintaining both, or choosing the one that suits your package best to maintain.
 
@@ -139,7 +147,6 @@ Everytime you make a major improvement to your code, you will want to repeat thi
 4. Upload this new version to PyPi: ```twine upload dist/*```
 
 ***
-*** 
 
 
 # Creating a conda installable package:
