@@ -25,15 +25,13 @@ An external dependency is code that a python package depends on that is not itse
  - There is nothing wrong with building both, and either maintaining both, or choosing the one that suits your package best to maintain.
 
 # Initial Steps for Pip and Conda:
-
-### Making your code pip or conda installable is much easier than you think! There are several key steps:
-### 1. Organize your code into the proper file heirarchy
-### 2. Add your ```__init__.py``` files
-### 3. Add a ```LICENSE```, and a ```README.md``` if you don't already have them
+#### 1. Organize your code into the proper file heirarchy
+#### 2. Add your ```__init__.py``` files
+#### 3. Add a ```LICENSE```, and a ```README.md``` if you don't already have them
 
 ***
 
-## 1. File Hierarchy:
+### 1. File Hierarchy:
 ```
 /mypackage
   /mypackage
@@ -46,13 +44,13 @@ An external dependency is code that a python package depends on that is not itse
 
 You can refer to this git repository to see the proper file structure. The example package is simply called 'conda-demo'.
 
-## 2. ```__init__.py``` files
+### 2. ```__init__.py``` files
   - These files help python identify your python files as importable packages. They have very simple contents:
   ```
   name = 'mypackage'
   ```
 
-## 3. Adding a ```LICENSE``` file  
+### 3. Adding a ```LICENSE``` file  
 The United States has pretty strict licensing laws, and any source code you plan to distribute must have a license associated with it.
   -  [This page on the python-guide is a helpful intro to licenses](http://docs.python-guide.org/en/latest/writing/license/)
 
@@ -64,7 +62,7 @@ You should already have completed the initial steps above before starting this s
 
 
 
-## Uploading your code to PyPi: Python Package Index
+### Uploading your code to PyPi: Python Package Index
 
 [Here is the PyPi Guide to Making pip Installable Code](https://packaging.python.org/tutorials/packaging-projects/)
 
