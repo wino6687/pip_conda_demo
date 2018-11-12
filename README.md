@@ -1,29 +1,8 @@
-# conda-demo
-Demo on how to create an anaconda package from scratch
-
-
-So you’ve written some great code in python. That's awesome! Chances are there are more people in the programming community that could benefit from using it. If you already have a public github repository, you are on the way to publishing your python code so that the open source community can benefit from your creation.
-
-Creating a python library installable with pip or anaconda is easy!
-
-
-## Starting Info and Questions:
-
-### What are pip and conda?
-In many ways, pip is the default package installer in python, while conda is an environment manager that aims to take pip's place and do more. If you already have an instance of python installed and you just want to install a common package or two, pip is the way to go. But pip really is lacking when it comes to managing and tracking external dependencies and accessing all of the available python packages out there.
-
-An external dependency is code that a python package depends on that is not itself a python package. This can be a problem for pip, because everything built in pip has a setup.py setup file associated with it. But if you use HDF5 as a dependency, its source code does not have a setup.py file.
-
-### So, what is conda-forge?
-conda-forge is a specific conda channel with specific rules for releasing a package. Any package on the conda-forge channel has dependencies that are all installable with either conda-forge or the defaults conda channel. This normally results in more work up front to get a package properly built for conda-forge, and often will involve packaging up one or more of your dependencies first. However, this extra work up front makes your package much easier to incorperate into existing workflows and can be critical to avoiding channel dependency errors that can arise when your package mixes the channels that its dependencies are downloaded with.
-
-### In Summation:
-- Pip is the easiest and quickest to use, and is best suited for 'pure' python libraries (no external dependencies)
-- conda is more flexible than pip, but requires a bit more work to get up and running
-- conda-forge has the most strict requirments out of all of them, but can be the most useful to the widest audience and is easy to maintain once setup.
-
+# Companion Git Repo to go with blog post (link when published)
 
 ### Should I use pip, conda, or conda-forge?
+
+ - There is no one answer to this question. There are plenty of people that prefer pip and plenty others who prefer conda. While conda may be better suited for certain more complex packages, there is a growing population of the python community that is moving back to pip from conda.
 
  - Does your code depend on packages that can’t be installed with pip or are not in python at all? (gdal or HDF5 for example)
     - If your code depends on a library that can only be installed with one of the conda channels or a user’s conda channel, then you should definitely shoot for having your package installable with conda and not pip.
