@@ -1,4 +1,4 @@
-from conda_demo import conda_demo
+from pip_conda_demo import pip_conda_demo
 import pytest
 
 def test_hello():
@@ -7,5 +7,5 @@ def test_hello():
     You start by performing an action your library should be capabale of doing,
     then assert that the action yielded the expected result!
     '''
-    response = conda_demo.demo()
+    response = pip_conda_demo.demo()
     assert response == 'hello world!'
