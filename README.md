@@ -80,6 +80,8 @@ setuptools.setup(
 
 Your setup.py file is your buildscript for setuptools. It is essentially what holds the most basic information about your package and where pip can find the rest of it (in your git repo). Every time you update your package, you will change the version number in your ```setup.py``` file before uploading it to pypi.
 
+For a full list of possible classifiers to be used in your setup.py file, refer to [this link on PyPi's Docs](https://pypi.org/pypi?%3Aaction=list_classifiers)
+
 ### 3. Create your Distribution Archive Files:
 
 Before you begin, try a ```python3 -m pip install --user --upgrade setuptools wheel``` to make sure they are up to date
