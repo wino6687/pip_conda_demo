@@ -29,7 +29,7 @@
       mysubpackage.py
 ```
 
-You can refer to this git repository to see the proper file structure. The example package is simply called 'conda-demo'.
+You can refer to this git repository to see the proper file structure. The example package is simply called ```pip_conda_demo``` and has a sub package called ```hello_world```.
 
 #### 2. ```__init__.py``` files
   - These files help python identify your python files as importable packages. They have very simple contents:

@@ -11,7 +11,7 @@ setuptools.setup(
     description="A python package for demonstrating how to make pip and conda libraries",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/wino6687/conda-demo",
+    url="https://github.com/wino6687/pip_conda_demo",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",

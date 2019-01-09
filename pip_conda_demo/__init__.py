@@ -1,1 +1,1 @@
-name='conda_demo'
+name='pip_conda_demo'

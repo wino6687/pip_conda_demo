@@ -16,6 +16,5 @@ install:
   - conda env create -f environment.yml
   - source activate demo_env
   - python setup.py install
-  - conda lsit
 script:
   - pytest -v
