@@ -18,5 +18,4 @@ install:
   - python setup.py install
   - conda lsit
 script:
-  - pytest
-  
+  - pytest -v
