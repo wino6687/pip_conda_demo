@@ -1,3 +1,5 @@
+![](https://img.shields.io/apm/l/:packageName.svg) ![](https://img.shields.io/pypi/pyversions/:packageName.svg)
+
 # Companion Git Repo to go with blog post (link when published)
 
 ### Should I use pip, conda, or conda-forge?

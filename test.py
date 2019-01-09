@@ -8,4 +8,4 @@ def test_hello():
     then assert that the action yielded the expected result!
     '''
     response = conda_demo.demo()
-    assert response = 'hello world!'
+    assert response == 'hello world!'
