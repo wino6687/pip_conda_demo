@@ -7,5 +7,4 @@ def test_hello():
     You start by performing an action your library should be capabale of doing,
     then assert that the action yielded the expected result!
     '''
-    response = pip_conda_demo.demo()
-    assert response == 'hello world!'
+    assert pip_conda_demo.demo() == 'hello world!'
