@@ -15,6 +15,10 @@ install:
   # make environment from yaml
   - conda env create -f environment.yml
   - source activate demo_env
+  # install our package locally through the setup.py file
   - python setup.py install
+before_script:
+  # run mock server, the '&' lets it run as a seperate process
+  - python pip_conda_demo/tests/mock_server.py &
 script:
   - pytest -v
