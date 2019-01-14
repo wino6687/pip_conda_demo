@@ -1,5 +1,5 @@
 
-# Companion Git Repo to go with blog post (link when published)
+# How to Publish a Pip or Conda library (Companion Repo to Earth Lab blog post)
 
 ### Should I use pip, conda, or conda-forge?
 
