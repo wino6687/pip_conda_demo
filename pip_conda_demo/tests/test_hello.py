@@ -14,6 +14,6 @@ def test_hello():
 def test_scrape():
     url = 'http://localhost:8000/data/data_file.txt'
     r = requests.get(url, allow_redirects=True)
-    open('text_file.txt','wb').write(r.content)
+    open('data_file.txt','wb').write(r.content)
     file_list = glob.glob("*.txt")
     assert file_list[0] == 'data_file.txt'
