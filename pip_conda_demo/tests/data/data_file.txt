@@ -1,0 +1,3 @@
+This is a text file to show you where to put your test data for a mock server. This file can be 
+found by travis CI in 'os.getcwd()+'/pip_conda_demo/tests/'. The url to fetch the file is 
+http://localhost:8000/data_file.txt'
