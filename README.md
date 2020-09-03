@@ -142,7 +142,7 @@ Making conda packages is a bit more complex than making pip installable librarie
 - [conda-forge](https://conda-forge.org)
 - Personal channel
 
-By default, [following the conda documentation](https://conda.io/docs/user-guide/tutorials/build-pkgs.html), you will create a package that is installable through your personal channel. This is okay and is still publicly available, however there is one major limitation:
+By default, [following the conda documentation](https://conda.io/projects/conda-build/en/latest/user-guide/tutorials/building-conda-packages.html), you will create a package that is installable through your personal channel. This is okay and is still publicly available, however there is one major limitation:
 
 ### Dependencies will all need to be installable with the channels specified in the user's .condarc file
 
