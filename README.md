@@ -1,14 +1,16 @@
 
 # How to Publish a Pip or Conda library (Companion Repo to [Earth Lab blog post](https://www.colorado.edu/earthlab/2019/01/03/publishing-your-python-code-pip-and-conda-tips-and-best-practices))
 
+For more detailed information on building and managing python libraries properly, see my [Blog Post](https://blog.willmnorris.com/2020/10/tools-for-writing-effective-and-robust.html) on Unit Testing, Continuous Integration, and Linting in python. 
+
 ### Should I use pip, conda, or conda-forge?
 
- - There is no one answer to this question. There are plenty of people that prefer pip and plenty others who prefer conda. While conda may be better suited for certain more complex packages, there is a growing population of the python community that is moving back to pip from conda. Pip has that lovely simplicity that many people love about Python. However, there is one particular reason you would want to use conda:
+  There is no single answer to this question, it depends on the situation. There are plenty of people that prefer pip and plenty others who prefer conda. While conda may be better suited for certain more complex packages, there is a growing population of the python community that is moving back to pip from conda. Pip has that lovely simplicity that many people love about Python. However, there is one particular reason you would want to use conda:
 
- - Does your code depend on packages that can’t be installed with pip or are not in python at all? (gdal or HDF5 for example)
+ - Does your code depend on packages that can’t be installed with pip or are not written in python at all? (ex: GDAL or HDF5)
     - If your code depends on a library that can only be installed with one of the conda channels or a user’s conda channel, then you should definitely shoot for having your package installable with conda and not pip.
     - You can double check this by creating a new environment with conda and attempting to install your dependencies with pip first and then conda. Or you can create a yaml file with all of your dependencies and test the channels by editing your ```.condarc``` file.
-      - If you depend on pacakages from conda, and you intend to have your library be a dependency within other's code, then using the conda-forge channel makes the most sense.
+      - If you depend on packages from conda, and you intend to have your library be a dependency within other's code, then using the conda-forge channel makes the most sense.
 
   There is nothing wrong with building both, and either maintaining both, or choosing the one that suits your package best to maintain. Most of my personal libraries I publish on both pypi (pip) and conda-forge. I really enjoy the extra level of quality that conda-forge ensures, which I will discuss below.  
 
@@ -124,11 +126,11 @@ Everytime you make a major improvement to your code, you will want to repeat thi
 
 ### Key Steps:
 1. Change the version number in your setup.py file
+   1. I really like [bump2version](https://www.colorado.edu/earthlab/2019/01/03/publishing-your-python-code-pip-and-conda-tips-and-best-practices) to help managing versioning for you 
 2. Remove your old distribution archive files
 3. In your package's main directory run: ```python3 setup.py sdist bdist_wheel``` to create new distribution archives
 4. Upload this new version to PyPi: ```twine upload dist/*```
 
-***
 
 
 # Creating a conda installable package:
