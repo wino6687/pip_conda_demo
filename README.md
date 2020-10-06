@@ -1,16 +1,16 @@
 
-# How to Publish a Pip or Conda library (Companion Repo to Earth Lab blog post)
+# How to Publish a Pip or Conda library (Companion Repo to [Earth Lab blog post](https://www.colorado.edu/earthlab/2019/01/03/publishing-your-python-code-pip-and-conda-tips-and-best-practices))
 
 ### Should I use pip, conda, or conda-forge?
 
- - There is no one answer to this question. There are plenty of people that prefer pip and plenty others who prefer conda. While conda may be better suited for certain more complex packages, there is a growing population of the python community that is moving back to pip from conda.
+ - There is no one answer to this question. There are plenty of people that prefer pip and plenty others who prefer conda. While conda may be better suited for certain more complex packages, there is a growing population of the python community that is moving back to pip from conda. Pip has that lovely simplicity that many people love about Python. However, there is one particular reason you would want to use conda:
 
  - Does your code depend on packages that can’t be installed with pip or are not in python at all? (gdal or HDF5 for example)
     - If your code depends on a library that can only be installed with one of the conda channels or a user’s conda channel, then you should definitely shoot for having your package installable with conda and not pip.
     - You can double check this by creating a new environment with conda and attempting to install your dependencies with pip first and then conda. Or you can create a yaml file with all of your dependencies and test the channels by editing your ```.condarc``` file.
       - If you depend on pacakages from conda, and you intend to have your library be a dependency within other's code, then using the conda-forge channel makes the most sense.
 
- - There is nothing wrong with building both, and either maintaining both, or choosing the one that suits your package best to maintain.
+  There is nothing wrong with building both, and either maintaining both, or choosing the one that suits your package best to maintain. Most of my personal libraries I publish on both pypi (pip) and conda-forge. I really enjoy the extra level of quality that conda-forge ensures, which I will discuss below.  
 
 # Initial Steps for Pip and Conda:
 #### 1. Organize your code into the proper file heirarchy
